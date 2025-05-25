@@ -247,5 +247,7 @@ Rectangle {
         anchors.left: parent.left
         anchors.right: parent.right
         anchors.top: topBar.bottom
+
+        minimumTileSize: Qt.platform.os == "android" ? ui.em(1) : 20
     }
 }

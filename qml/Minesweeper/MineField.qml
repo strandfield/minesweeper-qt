@@ -35,7 +35,7 @@ Rectangle {
     property color colLowLight: Qt.rgba(colBackground.r * 2.0 / 3, colBackground.g * 2.0 / 3, colBackground.b * 2.0 / 3, 1)
     property color colWrongNumber: Qt.rgba(1, 0.6, 0.6, 1)
 
-    property int minimumTileSize: Qt.platform.os === "android" ? 80 : 20
+    property int minimumTileSize: 20
     property int tileSize: minimumTileSize
 
     onTileSizeChanged: {
