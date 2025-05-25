@@ -232,7 +232,7 @@ Rectangle {
 
                 FontMetrics {
                     id: fontMetrics
-                    font.family: "sans-serif"
+                    font.family: Qt.platform.os === "android" ? "monospace" : "sans-serif"
                     font.pixelSize: Math.floor(7*mineField.tileSize/8)
                 }
 
