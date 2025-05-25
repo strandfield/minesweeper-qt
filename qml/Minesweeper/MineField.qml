@@ -330,7 +330,7 @@ Rectangle {
 
             TapHandler {
                 acceptedButtons: Qt.MiddleButton
-                acceptedPointerTypes: PointerDevice.GenericPointer
+                acceptedDevices: PointerDevice.Mouse
 
                 enabled: !game.finished
 
@@ -347,7 +347,7 @@ Rectangle {
 
             TapHandler {
                 acceptedButtons: Qt.RightButton
-                acceptedPointerTypes: PointerDevice.GenericPointer
+                acceptedDevices: PointerDevice.Mouse
 
                 enabled: !game.finished
 
@@ -368,19 +368,9 @@ Rectangle {
                 enabled: !game.finished
 
                 onGrabChanged: (transition, point) => {
-                    /*
-                    qml: 16: GrabExclusive
-                    qml: 32: UngrabExclusive
-                    qml: 48: CancelGrabExclusive
-                    qml: 1: GrabPassive
-                    qml: 2: UngrabPassive
-                    qml: 3: CancelGrabPassive
-                    */
 
-                    let grabPassive = PointerDevice.GrabPassive != null ? PointerDevice.GrabPassive : EventPoint.GrabPassive;
-
-                    if(transition == grabPassive) {
-                                       console.log("grab passive")
+                    if(transition == PointerDevice.GrabPassive) {
+                        console.log("grab passive")
                         let x = content.getTileX(point.position);
                         let y = content.getTileY(point.position);
                         let v = gameGrid[pos2index(x,y)];
