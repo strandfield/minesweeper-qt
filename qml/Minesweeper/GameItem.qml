@@ -174,7 +174,7 @@ Rectangle {
                     UiText {
                         text: "🤖"
                         anchors.verticalCenter: parent.verticalCenter
-                        visible: zoomMenuVisible
+                        visible: zoomMenuVisible && !(Qt.platform.os == "android")
 
                         TapHandler {
                             onTapped: {
